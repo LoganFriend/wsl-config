@@ -1,0 +1,22 @@
+###############################################################################
+# File: .functions
+# Author: Logan Friend
+# Date Created: 2019-06-29
+###############################################################################
+
+# All of my desired functions go here:
+
+# 
+startday() {
+    sudo apt-get update -y
+}
+
+# looks at directory after cd to a new location
+cd() {
+    builtin cd "$@" && ls -A
+}
+
+# Gets your public IP address using amazon
+pubip() {
+    curl checkip.amazonaws.com
+}

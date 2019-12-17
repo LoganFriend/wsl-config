@@ -1,0 +1,1 @@
+Run ubuntu-lts-base-setup.sh in a brand new ubuntu lts console. 

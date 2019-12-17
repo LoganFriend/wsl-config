@@ -1,0 +1,22 @@
+###############################################################################
+# File: .aliases
+# Author: Logan Friend
+# Date Created: 2019-06-29
+###############################################################################
+
+# All of my custom aliases that I want.
+
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias c=clear
+alias q=exit
+
+alias t='(tmux has-session 2>/dev/null && tmux attach) || (tmux new-session)'
+
+alias Desktop="cd $WINHOME/Desktop/"
+alias Downloads="cd $WINHOME/Downloads/"
+alias Pictures="cd $WINHOME/Pictures/"
+alias Videos="cd $WINHOME/Videos/"
+
+alias bashrc="$EDITOR ~/.bashrc"
