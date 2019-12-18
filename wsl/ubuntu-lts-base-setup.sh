@@ -84,6 +84,7 @@ sudo apt-get install docker-compose -y
 
 git config --global user.name "LoganFriend"
 git config --global user.email "loganfriend@charter.net"
+git config --global core.editor vim
 
 # BASH
 #==============================================================================
@@ -97,5 +98,8 @@ echo 'source /c/Users/logan/Files/6_scripts/dotfiles/.functions' >> ~/.bashrc
 
 # OTHER
 #==============================================================================
+
+#install virtual environments for python
+pip3 install virtualenv
 
 echo "You will need to restart your computer for changes to take effect"
