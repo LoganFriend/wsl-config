@@ -7,11 +7,11 @@
 # All of my desired functions go here:
 
 # 
-startday() {
+update() {
     sudo apt-get update -y
 }
 
-# looks at directory after cd to a new location
+# ls directory after cd to a new location
 cd() {
     builtin cd "$@" && ls -A
 }
@@ -19,4 +19,9 @@ cd() {
 # Gets your public IP address using amazon
 pubip() {
     curl checkip.amazonaws.com
+}
+
+# Move projects from working folder to archive
+archive() {
+    mv ~/Files/1_Projects/$1 ~/Files/9_Archive/1_Projects/
 }

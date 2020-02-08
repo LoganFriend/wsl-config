@@ -33,13 +33,21 @@ sudo apt-get install \
     git tmux \
     zsh powerline \
     awscli nmap \
-    build-essential gdb clang -y
+    build-essential gdb clang \
+    cmake -y
 
 # Install ruby, python 2, and python 3
 sudo apt-get install -y \
     ruby \
     python python-pip ipython \
     python3 python3-pip ipython3 python3-venv
+
+#install virtual environments for python
+pip3 install virtualenv
+
+# R
+sudo apt-get install -y \
+    r-base
 
 # docker dependencies
 sudo apt-get install -y \
@@ -90,7 +98,7 @@ git config --global core.editor vim
 #==============================================================================
 
 #oh-my-bash
-echo 'sh -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)"'
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
 echo 'source /c/Users/logan/Files/6_scripts/dotfiles/.exports' >> ~/.bashrc 
 echo 'source /c/Users/logan/Files/6_scripts/dotfiles/.aliases' >> ~/.bashrc 
@@ -98,8 +106,5 @@ echo 'source /c/Users/logan/Files/6_scripts/dotfiles/.functions' >> ~/.bashrc
 
 # OTHER
 #==============================================================================
-
-#install virtual environments for python
-pip3 install virtualenv
 
 echo "You will need to restart your computer for changes to take effect"
