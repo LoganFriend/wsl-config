@@ -42,8 +42,12 @@ sudo apt-get install -y \
     python python-pip ipython \
     python3 python3-pip ipython3 python3-venv
 
-#install virtual environments for python
-pip3 install virtualenv
+# Package Managers
+udo apt-get install -y \
+    npm
+
+#install virtual environments and pipenv for python
+pip3 install virtualenv pipenv
 
 # R
 sudo apt-get install -y \
@@ -100,6 +104,7 @@ git config --global core.editor vim
 #oh-my-bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
+#Dotfiles
 echo 'source /c/Users/logan/Files/6_scripts/dotfiles/.exports' >> ~/.bashrc 
 echo 'source /c/Users/logan/Files/6_scripts/dotfiles/.aliases' >> ~/.bashrc 
 echo 'source /c/Users/logan/Files/6_scripts/dotfiles/.functions' >> ~/.bashrc 
