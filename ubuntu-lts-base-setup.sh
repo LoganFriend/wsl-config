@@ -14,9 +14,10 @@ sudo apt-get update -y && sudo apt-get upgrade -y
 
 # Change mount point for c drive
 sudo touch /etc/wsl.conf
-sudo echo '[automount]' >> /etc/wsl.conf
-sudo echo 'root = /' >> /etc/wsl.conf
-sudo echo 'options = "metadata"' >> /etc/wsl.conf
+sudo chmod 333 wsl.conf
+echo '[automount]' >> /etc/wsl.conf
+echo 'root = /' >> /etc/wsl.conf
+echo 'options = "metadata"' >> /etc/wsl.conf
 
 # Add symlinks to user home
 cd $HOME
