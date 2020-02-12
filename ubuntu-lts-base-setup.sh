@@ -15,9 +15,9 @@ sudo apt-get update -y && sudo apt-get upgrade -y
 # Change mount point for c drive
 sudo touch /etc/wsl.conf
 sudo chmod 333 wsl.conf
-echo '[automount]' >> /etc/wsl.conf
-echo 'root = /' >> /etc/wsl.conf
-echo 'options = "metadata"' >> /etc/wsl.conf
+grep -qxF '[automount]' /etc/wsl.conf || echo '[automount]' >> /etc/wsl.conf
+grep -qxF 'root = /' /etc/wsl.conf || echo 'root = /' >> /etc/wsl.conf
+grep -qxF 'options = "metadata"' /etc/wsl.conf || echo 'options = "metadata"' >> /etc/wsl.conf
 
 # Add symlinks to user home
 cd $HOME
@@ -108,11 +108,13 @@ git config --global core.editor vim
 #Dotfiles
 cd $HOME
 git clone https://github.com/LoganFriend/dotfiles.git
-echo 'source $HOME/dotfiles/.exports' >> ~/.bashrc 
-echo 'source $HOME/dotfiles/.aliases' >> ~/.bashrc 
-echo 'source $HOME/dotfiles/.functions' >> ~/.bashrc 
+grep -qxF 'source $HOME/dotfiles/.exports' ~/.bashrc  || echo 'source $HOME/dotfiles/.exports' >> ~/.bashrc 
+grep -qxF 'source $HOME/dotfiles/.aliases' ~/.bashrc  || echo 'source $HOME/dotfiles/.aliases' >> ~/.bashrc 
+grep -qxF 'source $HOME/dotfiles/.functions' ~/.bashrc  || echo 'source $HOME/dotfiles/.functions' >> ~/.bashrc 
 
 # OTHER
 #==============================================================================
 
-echo "You will need to restart your computer for changes to take effect"
+# FINISH
+#==============================================================================
+echo "You will need to restart your computer for changes to take effect (specifically the changes to where the c drive is mounted)"
