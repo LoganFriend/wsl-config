@@ -1,11 +1,13 @@
+#!/bin/bash
+
 ###############################################################################
 # 
 #
 #
 ##############################################################################
 
-# start with an update
-sudo apt-get update
+# start with an update / upgrade
+sudo apt-get update -y && sudo apt-get upgrade -y
 
 # CONFIGS
 #==============================================================================
@@ -103,11 +105,11 @@ git config --global core.editor vim
 #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
 #Dotfiles
-cd ~
+cd $HOME
 git clone https://github.com/LoganFriend/dotfiles.git
-echo 'source ~/dotfiles/.exports' >> ~/.bashrc 
-echo 'source ~/dotfiles/.aliases' >> ~/.bashrc 
-echo 'source ~/dotfiles/.functions' >> ~/.bashrc 
+echo 'source $HOME/dotfiles/.exports' >> ~/.bashrc 
+echo 'source $HOME/dotfiles/.aliases' >> ~/.bashrc 
+echo 'source $HOME/dotfiles/.functions' >> ~/.bashrc 
 
 # OTHER
 #==============================================================================
