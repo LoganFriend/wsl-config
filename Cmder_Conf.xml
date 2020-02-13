@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2019-11-15 16:30:06" build="180626">
+		<key name=".Vanilla" modified="2020-02-12 16:20:13" build="180626">
 			<value name="Language" type="string" data="en"/>
 			<value name="StartType" type="hex" data="02"/>
 			<value name="CmdLine" type="string" data=""/>
@@ -11,15 +11,15 @@
 			<value name="StartFarEditors" type="hex" data="00"/>
 			<value name="StartCreateDelay" type="ulong" data="100"/>
 			<value name="ColorTable00" type="dword" data="002e2b25"/>
-			<value name="ColorTable01" type="dword" data="00d4d4d4"/>
-			<value name="ColorTable02" type="dword" data="00cc9966"/>
+			<value name="ColorTable01" type="dword" data="00cc9966"/>
+			<value name="ColorTable02" type="dword" data="0094c799"/>
 			<value name="ColorTable03" type="dword" data="0094c799"/>
 			<value name="ColorTable04" type="dword" data="00605ae1"/>
 			<value name="ColorTable05" type="dword" data="00c594c5"/>
 			<value name="ColorTable06" type="dword" data="007087d0"/>
 			<value name="ColorTable07" type="dword" data="00d4d4d4"/>
 			<value name="ColorTable08" type="dword" data="007e7365"/>
-			<value name="ColorTable09" type="dword" data="00b3b35f"/>
+			<value name="ColorTable09" type="dword" data="00cc9966"/>
 			<value name="ColorTable10" type="dword" data="0094c799"/>
 			<value name="ColorTable11" type="dword" data="00cc9966"/>
 			<value name="ColorTable12" type="dword" data="00605ae1"/>
@@ -103,10 +103,10 @@
 			<value name="Multi.SplitWidth" type="hex" data="04"/>
 			<value name="Multi.SplitHeight" type="hex" data="04"/>
 			<value name="KeyboardHooks" type="hex" data="02"/>
-			<value name="FontName" type="string" data="Consolas"/>
-			<value name="FontName2" type="string" data="Lucida Console"/>
+			<value name="FontName" type="string" data="MesloLGL Nerd Font"/>
+			<value name="FontName2" type="string" data="Consolas NF"/>
 			<value name="FontAutoSize" type="hex" data="00"/>
-			<value name="FontSize" type="ulong" data="16"/>
+			<value name="FontSize" type="ulong" data="19"/>
 			<value name="FontSizeX" type="ulong" data="0"/>
 			<value name="FontUseDpi" type="hex" data="01"/>
 			<value name="FontUseUnits" type="hex" data="00"/>
@@ -124,7 +124,7 @@
 			<value name="bgImageColors" type="dword" data="ffffffff"/>
 			<value name="bgOperation" type="hex" data="00"/>
 			<value name="bgPluginAllowed" type="hex" data="01"/>
-			<value name="AlphaValue" type="hex" data="F8"/>
+			<value name="AlphaValue" type="hex" data="FF"/>
 			<value name="AlphaValueSeparate" type="hex" data="01"/>
 			<value name="AlphaValueInactive" type="hex" data="EE"/>
 			<value name="UserScreenTransparent" type="hex" data="00"/>
@@ -135,11 +135,11 @@
 			<value name="Cascaded" type="hex" data="01"/>
 			<value name="IntegralSize" type="hex" data="00"/>
 			<value name="WindowMode" type="dword" data="0000051f"/>
-			<value name="ConWnd X" type="long" data="1220"/>
-			<value name="ConWnd Y" type="long" data="406"/>
+			<value name="ConWnd X" type="long" data="1140"/>
+			<value name="ConWnd Y" type="long" data="144"/>
 			<value name="LastMonitor" type="string" data="0,0,1920,1050"/>
-			<value name="ConWnd Width" type="dword" data="00000070"/>
-			<value name="ConWnd Height" type="dword" data="00000025"/>
+			<value name="ConWnd Width" type="dword" data="0000006c"/>
+			<value name="ConWnd Height" type="dword" data="0000002b"/>
 			<value name="16bit Height" type="ulong" data="0"/>
 			<value name="QuakeStyle" type="hex" data="00"/>
 			<value name="Restore2ActiveMon" type="hex" data="00"/>
@@ -193,9 +193,9 @@
 			<value name="FarGotoEditorPath" type="string" data='far.exe /e%1:%2 "%3"'/>
 			<value name="HighlightMouseRow" type="hex" data="00"/>
 			<value name="HighlightMouseCol" type="hex" data="00"/>
-			<value name="FixFarBorders" type="hex" data="01"/>
+			<value name="FixFarBorders" type="hex" data="00"/>
 			<value name="Anti-aliasing2" type="hex" data="00"/>
-			<value name="FixFarBordersRanges" type="string" data="2013-25C4;"/>
+			<value name="FixFarBordersRanges" type="string" data="E0A0-E0B0;"/>
 			<value name="ExtendUCharMap" type="hex" data="01"/>
 			<value name="EnhanceGraphics" type="hex" data="01"/>
 			<value name="EnhanceButtons" type="hex" data="00"/>
@@ -647,14 +647,14 @@
 					<value name="Count" type="long" data="1"/>
 					<value name="Cmd1" type="string" data='*cmd /c "%ConEmuDir%\..\git-for-windows\bin\bash --login -i" -new_console:d:%USERPROFILE%'/>
 				</key>
-				<key name="Task8" modified="2019-11-15 11:56:16" build="180626">
+				<key name="Task8" modified="2020-02-12 16:20:13" build="180626">
 					<value name="Name" type="string" data="{bash::bash}"/>
 					<value name="Flags" type="dword" data="00000000"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data=' /icon "%USERPROFILE%\AppData\Local\lxss\bash.ico"'/>
 					<value name="Active" type="long" data="0"/>
 					<value name="Count" type="long" data="1"/>
-					<value name="Cmd1" type="string" data="%windir%\system32\bash.exe ~ -cur_console:p"/>
+					<value name="Cmd1" type="string" data="%windir%\system32\wsl.exe ~ -cur_console:p"/>
 				</key>
 				<key name="&lt;Startup&gt;" modified="2019-07-07 14:30:30" build="180626"/>
 			</key>
@@ -662,28 +662,30 @@
 				<value name="Count" type="long" data="0"/>
 			</key>
 			<key name="Colors" modified="2019-11-15 11:56:16" build="180626">
-				<value name="Count" type="long" data="4"/>
+				<value name="Count" type="long" data="6"/>
 				<key name="Palette1" modified="2019-11-15 11:56:16" build="180626">
-					<value name="Name" type="string" data="base 16-ocean-dark"/>
+					<value name="Name" type="string" data="base16-ocean-dark"/>
+					<value name="ExtendColors" type="hex" data="00"/>
+					<value name="ExtendColorIdx" type="hex" data="0e"/>
 					<value name="TextColorIdx" type="hex" data="10"/>
 					<value name="BackColorIdx" type="hex" data="10"/>
 					<value name="PopTextColorIdx" type="hex" data="10"/>
 					<value name="PopBackColorIdx" type="hex" data="10"/>
-					<value name="ColorTable00" type="dword" data="002e2b25"/>
-					<value name="ColorTable01" type="dword" data="00cc9966"/>
-					<value name="ColorTable02" type="dword" data="0094c799"/>
-					<value name="ColorTable03" type="dword" data="0094c799"/>
-					<value name="ColorTable04" type="dword" data="00605ae1"/>
-					<value name="ColorTable05" type="dword" data="00c594c5"/>
+					<value name="ColorTable00" type="dword" data="003b302b"/>
+					<value name="ColorTable01" type="dword" data="00b3a18f"/>
+					<value name="ColorTable02" type="dword" data="008cbea3"/>
+					<value name="ColorTable03" type="dword" data="008cbea3"/>
+					<value name="ColorTable04" type="dword" data="006a61bf"/>
+					<value name="ColorTable05" type="dword" data="00ad8eb4"/>
 					<value name="ColorTable06" type="dword" data="007087d0"/>
-					<value name="ColorTable07" type="dword" data="00d4d4d4"/>
+					<value name="ColorTable07" type="dword" data="00cec5c0"/>
 					<value name="ColorTable08" type="dword" data="007e7365"/>
-					<value name="ColorTable09" type="dword" data="00cc9966"/>
-					<value name="ColorTable10" type="dword" data="0094c799"/>
-					<value name="ColorTable11" type="dword" data="00cc9966"/>
-					<value name="ColorTable12" type="dword" data="00605ae1"/>
-					<value name="ColorTable13" type="dword" data="00605ae1"/>
-					<value name="ColorTable14" type="dword" data="0063c8fa"/>
+					<value name="ColorTable09" type="dword" data="00b3a18f"/>
+					<value name="ColorTable10" type="dword" data="008cbea3"/>
+					<value name="ColorTable11" type="dword" data="00b3a18f"/>
+					<value name="ColorTable12" type="dword" data="006a61bf"/>
+					<value name="ColorTable13" type="dword" data="006a61bf"/>
+					<value name="ColorTable14" type="dword" data="008bcbeb"/>
 					<value name="ColorTable15" type="dword" data="007087d0"/>
 				</key>
 				<key name="Palette2" modified="2019-11-15 11:56:16" build="180626">
@@ -754,6 +756,52 @@
 					<value name="ColorTable13" type="dword" data="00eb84b0"/>
 					<value name="ColorTable14" type="dword" data="0095ccff"/>
 					<value name="ColorTable15" type="dword" data="00ffffff"/>
+				</key>
+				<key name="Palette5" modified="2016-04-16 18:37:50" build="180626">
+					<value name="Name" type="string" data="Oceans16 Dark"/>
+					<value name="TextColorIdx" type="hex" data="10"/>
+					<value name="BackColorIdx" type="hex" data="10"/>
+					<value name="PopTextColorIdx" type="hex" data="10"/>
+					<value name="PopBackColorIdx" type="hex" data="10"/>
+					<value name="ColorTable00" type="dword" data="00453830"/>
+					<value name="ColorTable01" type="dword" data="00b17f66"/>
+					<value name="ColorTable02" type="dword" data="0065ac02"/>
+					<value name="ColorTable03" type="dword" data="0098c18f"/>
+					<value name="ColorTable04" type="dword" data="006a61bf"/>
+					<value name="ColorTable05" type="dword" data="00eca6ca"/>
+					<value name="ColorTable06" type="dword" data="008eaaef"/>
+					<value name="ColorTable07" type="dword" data="00e6d4d0"/>
+					<value name="ColorTable08" type="dword" data="00b09788"/>
+					<value name="ColorTable09" type="dword" data="00e7ab77"/>
+					<value name="ColorTable10" type="dword" data="009aca8f"/>
+					<value name="ColorTable11" type="dword" data="00c0c67b"/>
+					<value name="ColorTable12" type="dword" data="009491e3"/>
+					<value name="ColorTable13" type="dword" data="007c79db"/>
+					<value name="ColorTable14" type="dword" data="00a3d7dd"/>
+					<value name="ColorTable15" type="dword" data="00e6d4d0"/>
+				</key>
+				<key name="Palette6" modified="2017-01-06 21:01:42" build="161206">
+					<value name="Name" type="string" data="One Dark"/>
+					<value name="TextColorIdx" type="hex" data="10"/>
+					<value name="BackColorIdx" type="hex" data="10"/>
+					<value name="PopTextColorIdx" type="hex" data="10"/>
+					<value name="PopBackColorIdx" type="hex" data="10"/>
+					<value name="ColorTable00" type="dword" data="00342c28"/>
+					<value name="ColorTable01" type="dword" data="0070635c"/>
+					<value name="ColorTable02" type="dword" data="0079c398"/>
+					<value name="ColorTable03" type="dword" data="0079c398"/>
+					<value name="ColorTable04" type="dword" data="004650be"/>
+					<value name="ColorTable05" type="dword" data="00dd78c6"/>
+					<value name="ColorTable06" type="dword" data="00669ad1"/>
+					<value name="ColorTable07" type="dword" data="00bfb2ab"/>
+					<value name="ColorTable08" type="dword" data="00697374"/>
+					<value name="ColorTable09" type="dword" data="00efaf61"/>
+					<value name="ColorTable10" type="dword" data="0079c398"/>
+					<value name="ColorTable11" type="dword" data="00c2b656"/>
+					<value name="ColorTable12" type="dword" data="00756ce0"/>
+					<value name="ColorTable13" type="dword" data="007a77f2"/>
+					<value name="ColorTable14" type="dword" data="005791f9"/>
+					<value name="ColorTable15" type="dword" data="00939fa0"/>
 				</key>
 			</key>
 		</key>

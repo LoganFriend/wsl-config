@@ -37,9 +37,10 @@ sudo apt-get install -y \
     awscli nmap \
     build-essential gdb clang cmake
 
-# Install ruby, python 2, and python 3
+# Install ruby, R, python 2, and python 3
 sudo apt-get install -y \
     ruby \
+    r-base \
     python python-pip ipython \
     python3 python3-pip ipython3 python3-venv
 
@@ -49,10 +50,6 @@ sudo apt-get install -y \
 
 #install virtual environments and pipenv for python
 pip3 install virtualenv pipenv
-
-# R
-sudo apt-get install -y \
-    r-base
 
 # docker dependencies
 sudo apt-get install -y \
@@ -102,19 +99,85 @@ git config --global core.editor vim
 # BASH
 #==============================================================================
 
-#oh-my-bash
-#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+# Zsh / Oh-My-Zsh
+if command -v zsh &> /dev/null && command -v git &> /dev/null && command -v wget &> /dev/null; then
+	echo -e "ZSH and Git are already installed\n"
+else
+	if sudo apt install -y zsh git wget || sudo dnf install -y zsh git wget || sudo yum install -y zsh git wget || sudo brew install git zsh wget ; then
+		echo -e "ZSH and Git Installed\n"
+	else
+		echo -e "Can't install ZSH or Git\n" && exit
+	fi
+fi
 
-#Dotfiles
-cd $HOME
-git clone https://github.com/LoganFriend/dotfiles.git
-grep -qxF 'source $HOME/dotfiles/.exports' ~/.bashrc  || echo 'source $HOME/dotfiles/.exports' >> ~/.bashrc 
-grep -qxF 'source $HOME/dotfiles/.aliases' ~/.bashrc  || echo 'source $HOME/dotfiles/.aliases' >> ~/.bashrc 
-grep -qxF 'source $HOME/dotfiles/.functions' ~/.bashrc  || echo 'source $HOME/dotfiles/.functions' >> ~/.bashrc 
+if mv -n ~/.zshrc ~/.zshrc-backup-$(date +"%Y-%m-%d"); then	# backup .zshrc
+	echo -e "Backed up the current .zshrc to .zshrc-backup-date\n"
+fi
+
+echo -e "Installing oh-my-zsh\n"
+if git clone --depth=1 git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh; then
+	echo -e "Installed OH-MY-ZSH\n"
+fi
+
+cp -f .zshrc ~/
+
+# INSTALL FONTS
+
+if git clone --depth=1 https://github.com/powerline/fonts.git --depth=1 ~/.quickzsh/powerline_fonts; then :
+else
+	cd ~/.quickzsh/powerline_fonts && git pull
+fi
+
+if ~/.quickzsh/powerline_fonts/install.sh && rm -rf ~/.quickzsh/powerline_fonts; then
+	echo -e "\npowerline_fonts Installed\n"
+else
+	echo -e "\npowerline_fonts Installation Failed\n"
+fi
+
+
+wget -N https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf -P ~/.fonts/
+wget -N https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete.ttf -P ~/.fonts/
+
+fc-cache -fv ~/.fonts
+
+# Plugins
+
+if git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k; then :
+else
+	cd ~/.oh-my-zsh/custom/themes/powerlevel10k && git pull
+fi
+
+if git clone --depth 1 https://github.com/supercrabtree/k $HOME/.oh-my-zsh/custom/plugins/k; then :
+else
+	cd ~/.oh-my-zsh/custom/plugins/k && git pull
+fi
 
 # OTHER
 #==============================================================================
 
+#Dotfiles
+cd $HOME
+git clone https://github.com/LoganFriend/dotfiles.git
+cp .zshrc ~/.zshrc
+
+#in case you want to use the other dotfiles in another .zshrc file
+#grep -qxF 'source $HOME/dotfiles/.exports' ~/.zshrc  || echo 'source $HOME/dotfiles/.exports' >> ~/.zshrc 
+#grep -qxF 'source $HOME/dotfiles/.aliases' ~/.zshrc  || echo 'source $HOME/dotfiles/.aliases' >> ~/.zshrc 
+#grep -qxF 'source $HOME/dotfiles/.functions' ~/.zshrc  || echo 'source $HOME/dotfiles/.functions' >> ~/.zshrc 
+
+# Fix on-my-zsh permission issues
+chmod 555 $HOME/.oh-my-zsh
+
 # FINISH
 #==============================================================================
+
+echo -e "\nSudo access is needed to change default shell\n"
+
+if chsh -s $(which zsh) && /bin/zsh -i -c upgrade_oh_my_zsh; then
+	echo -e "Installation Successful, exit terminal and enter a new session"
+else
+	echo -e "Something is wrong"
+fi
+exit
+
 echo "You will need to restart your computer for changes to take effect (specifically the changes to where the c drive is mounted)"
